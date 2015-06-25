@@ -1,3 +1,11 @@
-<h1>Edit Request</h1>
+<%= content_for :menu do %>
+  <ul>
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'New Rush', new_request_path %></li>
+    <li><%= link_to 'Rush Log', requests_path %></li>
+  </ul>
+<% end %>
+
+<h1>Edit request for <%= @request.loan_number %></h1>
 
 <%= render 'form' %>
