@@ -1,7 +1,7 @@
 <h1>Requests</h1>
 
 <ul>
-  <%= @requests.each do |request| %>
-    <li><%= request.loan_number %></li>
+  <% @requests.each do |request| %>
+    <li><%= link_to request.loan_number, request_path(request) %></li>
   <% end %>
 </ul>

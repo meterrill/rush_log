@@ -1,0 +1,9 @@
+<h1><%= @request.loan_number %> - <%= @request.borrower_name %></h1>
+
+<p>
+  <%= @request.reason %>
+</p>
+
+<p>
+  <%= link_to "Return to requests list", requests_path %>
+</p>
