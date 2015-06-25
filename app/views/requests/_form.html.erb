@@ -1,4 +1,4 @@
-<%= layouts/errors, object: @request %>
+<%= render 'layouts/errors', object: @request %>
 
 <%= form_for @request do |f| %>
   <%= f.label :loan_number %>
@@ -6,6 +6,6 @@
   <%= f.label :borrower_name %>
   <%= f.text_field :borrower_name %>
   <%= f.label :reason %>
-  <%= f.text_area :reason, size: "24x6" %>
+  <%= f.text_area :reason %>
   <%= f.submit %>
 <% end %>
