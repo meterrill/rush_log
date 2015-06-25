@@ -7,6 +7,13 @@
 <p>
   <%= link_to "Edit", edit_request_path(@request) %>
 </p>
+
+<p>
+  <%= link_to "Delete", request_path(@request),
+                        :data => {confirm: "Are you sure?",
+                                  method: "delete"} %>
+</p>
+
 <p>
   <%= link_to "Return to requests list", requests_path %>
 </p>
