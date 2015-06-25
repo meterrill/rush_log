@@ -12,6 +12,10 @@ class RequestsController < ApplicationController
     end
   end
 
+  def index
+    @requests = Request.all
+  end
+
 private
   def request_params
     params.require(:request).permit(:loan_number,
