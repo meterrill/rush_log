@@ -1,4 +1,6 @@
 class RequestsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
   def new
     @request = Request.new
   end
@@ -14,7 +16,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.all
+    @requests = Request.order(sort_column + " " + sort_direction)
   end
 
   def show
@@ -47,5 +49,13 @@ private
     params.require(:request).permit(:loan_number,
                                     :borrower_name,
                                     :reason)
+  end
+
+  def sort_column
+    Request.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
   end
 end
