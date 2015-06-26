@@ -1,8 +1,8 @@
 <%= content_for :title, "Rush log" %>
 
 <%= content_for :menu do %>
-  <ul>
-    <li><%= link_to 'Home', root_path %></li>
+  <ul class="nav navbar-nav navbar-right">
+    <li class="active"><%= link_to 'Home', root_path %></li>
     <li><%= link_to 'New Rush', new_request_path %></li>
   </ul>
 <% end %>
