@@ -9,6 +9,29 @@
 
 <h1>Rush log</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Requested by</th>
+      <th>Loan number</th>
+      <th>Borrower name</th>
+      <th>Reason for rush</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.created_at %></td>
+        <td><%= request.requested_by %></td>
+        <td><%= request.loan_number %></td>
+        <td><%= request.borrower_name %></td>
+        <td><%= request.reason %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <ul>
   <% @requests.each do |request| %>
     <li><%= link_to request.loan_number, request_path(request) %></li>
