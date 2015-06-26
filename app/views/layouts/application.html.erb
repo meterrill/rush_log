@@ -13,6 +13,8 @@
       </nav>
     </header>
     <main role="main">
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
       <%= yield %>
     </main>
   </body>
