@@ -16,7 +16,9 @@
     <%= label_tag :query, "Search for:", class: "sr-only" %>
     <div class="input-group">
       <%= text_field_tag :query, params[:query], class: "form-control" %>
-      <%= link_to "X", requests_path, class: "input-group-addon" %>
+      <span class="input-group-btn">
+        <%= link_to "X", requests_path, class: "btn btn-default" %>
+      </span>
     </div>
   </div>
     <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
