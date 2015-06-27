@@ -9,6 +9,15 @@
 
 <h1>Rush log</h1>
 
+<%= form_tag requests_path, method: :get do %>
+  <%= hidden_field_tag :direction, params[:direction] %>
+  <%= hidden_field_tag :sort, params[:sort] %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
 <table class="table table-hover">
   <thead>
     <tr>

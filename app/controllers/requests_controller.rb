@@ -1,6 +1,14 @@
 class RequestsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
+  def index
+    @requests = Request.column_search(params[:query]).order(sort_column + " " + sort_direction)
+  end
+
+  def show
+    @request = Request.find(params[:id])
+  end
+
   def new
     @request = Request.new
   end
@@ -13,14 +21,6 @@ class RequestsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def index
-    @requests = Request.order(sort_column + " " + sort_direction)
-  end
-
-  def show
-    @request = Request.find(params[:id])
   end
 
   def edit
