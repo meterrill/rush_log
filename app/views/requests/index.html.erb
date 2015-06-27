@@ -36,7 +36,7 @@
   </thead>
   <tbody>
     <% @requests.each do |request| %>
-      <tr>
+      <tr data-link="<%= request_path(request) %>">
         <td><%= request.created_at.strftime("%B %e, %Y") %></td>
         <td><%= request.requested_by %></td>
         <td><%= request.loan_number %></td>
