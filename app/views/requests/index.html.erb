@@ -9,13 +9,17 @@
 
 <h1>Rush log</h1>
 
-<%= form_tag requests_path, method: :get do %>
+<%= form_tag requests_path, method: :get, class: "form-inline" do %>
   <%= hidden_field_tag :direction, params[:direction] %>
   <%= hidden_field_tag :sort, params[:sort] %>
-  <p>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search", name: nil %>
-  </p>
+  <div class="form-group">
+    <%= label_tag :query, "Search for:", class: "sr-only" %>
+    <div class="input-group">
+      <%= text_field_tag :query, params[:query], class: "form-control" %>
+      <%= link_to "X", requests_path, class: "input-group-addon" %>
+    </div>
+  </div>
+    <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
 <% end %>
 
 <table class="table table-hover">
