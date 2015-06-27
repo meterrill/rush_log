@@ -22,7 +22,7 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
-        <td><%= request.created_at %></td>
+        <td><%= request.created_at.strftime("%B %e, %Y") %></td>
         <td><%= request.requested_by %></td>
         <td><%= request.loan_number %></td>
         <td><%= request.borrower_name %></td>
