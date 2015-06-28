@@ -46,9 +46,3 @@
     <% end %>
   </tbody>
 </table>
-
-<ul>
-  <% @requests.each do |request| %>
-    <li><%= link_to request.loan_number, request_path(request) %></li>
-  <% end %>
-</ul>

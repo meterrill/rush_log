@@ -8,17 +8,30 @@
   </ul>
 <% end %>
 
-<h1><%= @request.loan_number %> - <%= @request.borrower_name %></h1>
+<div class="form-group">
+  <%= label_tag :loan_number %>
+  <p class="form-control" readonly>
+    <%= @request.loan_number %>
+  </p>
+</div>
+<div class="form-group">
+  <%= label_tag :borrower_name %>
+  <p class="form-control" readonly>
+    <%= @request.borrower_name %>
+  </p>
+</div>
+<div class="form-group">
+  <%= label_tag :reason, "Reason for rush" %>
+  <textarea class="form-control" rows="10" readonly>
+    <%= @request.reason %>
+  </textarea>
+</div>
 
-<h3>
-  <%= @request.reason %>
-</h3>
-
-<p>
+<p class="btn btn-default">
   <%= link_to "Edit", edit_request_path(@request) %>
 </p>
 
-<p>
+<p class="btn btn-default">
   <%= link_to "Delete", request_path(@request),
                         data: {confirm: "Are you sure?"},
                         method: "delete" %>
