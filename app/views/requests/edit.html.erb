@@ -2,7 +2,11 @@
 
 <%= content_for :menu do %>
   <ul class="nav navbar-nav navbar-right">
-    <li><%= link_to 'New Rush', new_request_path %></li>
+    <li>
+      <%= link_to new_request_path do %>
+        <span class="glyphicon glyphicon-plus"></span> New Rush
+      <% end %>
+    </li>
     <li><%= link_to 'Rush Log', requests_path %></li>
   </ul>
 <% end %>
