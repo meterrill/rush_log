@@ -7,7 +7,11 @@
         <span class="glyphicon glyphicon-plus"></span> New Rush
       <% end %>
     </li>
-    <li><%= link_to 'Rush Log', requests_path %></li>
+    <li>
+      <%= link_to requests_path do %>
+        <span class="glyphicon glyphicon-th-list"></span> Rush Log
+      <% end %>
+    </li>
   </ul>
 <% end %>
 
