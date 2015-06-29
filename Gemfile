@@ -35,6 +35,8 @@ gem 'turbolinks'
 
 gem 'pg_search'
 
+gem 'devise'
+
 group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
