@@ -26,11 +26,8 @@
       </nav>
     </header>
     <main class="container" role="main">
-      <% if flash[:alert] || flash[:notice] %>
-        <div class="alert alert-success">
-          <%= flash[:alert] %>
-          <%= flash[:notice] %>
-        </div>
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, class: "alert alert-#{name}" %>
       <% end %>
       <%= yield %>
     </main>

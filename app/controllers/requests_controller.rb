@@ -15,8 +15,8 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-    if@request.save
-      flash[:notice] = "Request successfully submitted!"
+    if @request.save
+      flash[:success] = "Request successfully submitted!"
       redirect_to requests_path
     else
       render :new
@@ -29,8 +29,8 @@ class RequestsController < ApplicationController
 
   def update
     @request = Request.find(params[:id])
-    if@request.update(request_params)
-      flash[:notice] = "Request successfully updated!"
+    if @request.update(request_params)
+      flash[:success] = "Request successfully updated!"
       redirect_to requests_path
     else
       render :edit
@@ -40,7 +40,7 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
-    flash[:notice] = "Request successfully deleted."
+    flash[:success] = "Request successfully deleted."
     redirect_to requests_path
   end
 
