@@ -2,7 +2,6 @@
 
 <%= content_for :menu do %>
   <ul class="nav navbar-nav navbar-right">
-    <li class="active"><%= link_to 'Home', root_path %></li>
     <li><%= link_to 'New Rush', new_request_path %></li>
   </ul>
 <% end %>
@@ -16,7 +15,7 @@
     <%= label_tag :query, "Search for:", class: "sr-only" %>
     <div class="input-group">
       <%= text_field_tag :query, params[:query], class: "form-control" %>
-      <span class="input-group-btn">
+      <span class="input-group-btn" title="clear search">
         <%= link_to "X", requests_path, class: "btn btn-default" %>
       </span>
     </div>
