@@ -20,7 +20,9 @@
     <div class="input-group">
       <%= text_field_tag :query, params[:query], class: "form-control" %>
       <span class="input-group-btn" title="clear search">
-        <%= link_to "X", requests_path, class: "btn btn-default" %>
+        <%= link_to requests_path, class: "btn btn-default" do %>
+          <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
       </span>
     </div>
   </div>
