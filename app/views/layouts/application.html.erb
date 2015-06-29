@@ -21,13 +21,33 @@
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <% if user_signed_in? %>
-              Logged in as <strong><%= current_user.email %></strong>.
-              <%= yield :menu %>
-              <%= link_to 'Edit profile', edit_user_registration_path %>
-              <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <%= link_to requests_path do %>
+                    <span class="glyphicon glyphicon-th-list"></span> Rush Log
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_request_path do %>
+                    <span class="glyphicon glyphicon-plus"></span> New Rush
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to "Logged in as #{current_user.email}", edit_user_registration_path %>
+                </li>
+                <li>
+                  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
             <% else %>
-              <%= link_to 'Sign up', new_user_registration_path %>
-              <%= link_to 'Login', new_user_session_path %>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <%= link_to 'Sign up', new_user_registration_path %>
+                </li>
+                <li>
+                  <%= link_to 'Login', new_user_session_path %>
+                </li>
+              </ul>
             <% end %>
           </div>
         </div>

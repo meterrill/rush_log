@@ -1,15 +1,5 @@
 <%= content_for :title, "Rush log" %>
 
-<%= content_for :menu do %>
-  <ul class="nav navbar-nav navbar-right">
-    <li>
-      <%= link_to new_request_path do %>
-        <span class="glyphicon glyphicon-plus"></span> New Rush
-      <% end %>
-    </li>
-  </ul>
-<% end %>
-
 <h1>Rush log</h1>
 
 <%= form_tag requests_path, method: :get, class: "form-inline" do %>
