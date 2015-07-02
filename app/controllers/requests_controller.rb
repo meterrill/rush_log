@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_filter :authenticate_admin! || :authenticate_user!
+  before_filter :require_login
 
   helper_method :sort_column, :sort_direction
 
@@ -47,6 +47,14 @@ class RequestsController < ApplicationController
   end
 
 private
+  def require_login
+    if
+      user_signed_in? || admin_signed_in?
+    else
+      redirect_to new_user_session_path
+    end
+  end
+
   def request_params
     params.require(:request).permit(:loan_number,
                                     :borrower_name,
