@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     <% @users.each do |user| %>
-      <tr>
+      <tr data-link="<%= edit_user_path(user) %>">
         <td><%= user.email %></td>
       </tr>
     <% end %>

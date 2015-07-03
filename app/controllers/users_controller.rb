@@ -7,12 +7,30 @@ class UsersController < ApplicationController
     @users = User.order(sort_column + " " + sort_direction)
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = "User successfully updated!"
+      redirect_to users_path
+    else
+      render :edit
+    end
+  end
+
 private
   def require_admin
     unless admin_signed_in?
     flash[:error] = "You must be logged in as admin to access this section."
     redirect_to :back
     end
+  end
+
+  def user_params
+    params.require(:user).permit(:email)
   end
 
   def sort_column
