@@ -37,6 +37,8 @@ gem 'pg_search'
 
 gem 'devise'
 
+gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
+
 group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
